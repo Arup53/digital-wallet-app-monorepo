@@ -1,5 +1,6 @@
 import Image, { type ImageProps } from "next/image";
 import { Button } from "@repo/ui/button";
+import { Signup } from "@repo/ui/signup";
 import styles from "./page.module.css";
 
 type Props = Omit<ImageProps, "src"> & {
@@ -31,6 +32,7 @@ export default function Home() {
           height={38}
           priority
         />
+        <Signup />
         <ol>
           <li>
             Get started by editing <code>apps/web/app/page.tsx</code>
