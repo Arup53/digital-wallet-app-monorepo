@@ -1,11 +1,14 @@
-"use client";
+import { getServerSession } from "next-auth";
+import { redirect } from "next/navigation";
+import { authOptions } from "./lib/auth";
 
-import { useStore } from "@repo/store";
-import { useSession, signIn, signOut } from "next-auth/react";
-import Link from "next/link";
-export default function Home() {
-  const store = useStore((state) => state.balance);
-  const { data: session } = useSession();
-  console.log(session);
-  return <div className=""></div>;
+export default async function Home() {
+  // const store = useStore((state) => state.balance);
+
+  const session = await getServerSession(authOptions);
+  if (session?.user) {
+    redirect("/dashboard");
+  } else {
+    redirect("/api/auth/signin");
+  }
 }
