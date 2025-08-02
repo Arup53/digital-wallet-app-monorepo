@@ -7,7 +7,8 @@
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types",
-    "start-webhook": "cd ./apps/bank-webhook && npm run build && npm run start"
+    "start-webhook": "cd ./apps/bank-webhook && npm run build && npm run start",
+    "db:generate": "cd packages/db && npx prisma generate && cd ../.."
   },
   "devDependencies": {
     "prettier": "^3.5.3",
