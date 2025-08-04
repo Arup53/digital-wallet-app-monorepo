@@ -2,7 +2,8 @@ name: Build on PR
 
 on:
   pull_request:
-     branches: - master
+    branches:
+      - master
 
 jobs:
   build:
@@ -15,15 +16,13 @@ jobs:
       - name: use node js
         uses: actions/setup-node@v3
         with:
-          node_version: "20"
+          node-version: "20"
 
-      - name: install dependcies
+      - name: install dependencies
         run: npm install
 
       - name: Generate prisma client
-        run : npm run db:generate
+        run: npm run db:generate
 
       - name: run build
         run: npm run build
-
-
