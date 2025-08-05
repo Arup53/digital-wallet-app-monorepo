@@ -11,6 +11,8 @@
     "check-types": "tsc --noEmit"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.2",
+    "@heroicons/react": "^2.2.0",
     "@repo/db": "*",
     "@repo/store": "*",
     "@repo/ui": "*",

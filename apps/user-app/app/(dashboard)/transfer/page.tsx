@@ -1,10 +1,10 @@
 import prisma from "@repo/db/client";
 
-import { BalanceCard } from "../../../components/BalanceCard";
+import { BalanceCard } from "../../../components/dashboard/BalanceCard";
 import { getServerSession } from "next-auth";
 import { authOptions } from "../../lib/auth";
-import { OnRampTransactions } from "../../../components/OnRampTransaction";
-import { AddMoney } from "../../../components/AddMoneyCard";
+import { OnRampTransactions } from "../../../components/dashboard/OnRampTransaction";
+import { AddMoney } from "../../../components/dashboard/AddMoneyCard";
 
 async function getBalance() {
   const session = await getServerSession(authOptions);
