@@ -20,7 +20,7 @@ const AdSection = () => {
         {adArray.map((el) => (
           <div
             key={el.title}
-            className=" border-2  border-purple-400 w-[16.5rem] h-[17.5rem] rounded-3xl flex gap-2 justify-between "
+            className=" border-2   w-[16.5rem] h-[17.5rem] rounded-3xl flex gap-2 justify-between "
           >
             <p className="text-2xl translate-x-8 translate-y-8   ">{el.title}</p>
             <img

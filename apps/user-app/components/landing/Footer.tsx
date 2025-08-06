@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <section className="bg-black text-white w-full mt-24 py-28 border-amber-400 border min-h-[50vh] ">
+    <section className="bg-black text-white w-full mt-24 py-28 border-none  min-h-[50vh] ">
       <div className="w-[75%] mx-auto flex justify-center gap-6 text-sm mb-12">
         <div>
           <img
