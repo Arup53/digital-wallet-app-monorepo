@@ -2,22 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap");
-
-
-@font-face {
-  font-family: "Modern Negra";
-  src: url("/fonts/Modern Negra Demo.ttf") format("truetype");
-}
-
-@theme {
-  --color-yellow: #e7d393;
-  --color-white-100: #efefef;
-  --font-sans: "Mona Sans", sans-serif;
-  --font-modern-negra: "Modern Negra", sans-serif;
-  --font-serif: "DM Serif Text", serif;
-}
-
 html,
 body {
   width: 100%;
@@ -25,26 +9,27 @@ body {
   overflow-x: hidden;
 }
 
-@utility flex-center {
+/* Replacing @utility flex-center */
+.flex-center {
   @apply flex justify-center items-center;
 }
 
-@utility col-center {
+.col-center {
   @apply flex flex-col justify-center items-center;
 }
 
-@utility abs-center {
+.abs-center {
   @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2;
 }
 
-@utility text-gradient {
+.text-gradient {
   background: linear-gradient(to bottom, #ffffff, #898989);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
-@utility radial-gradient {
+.radial-gradient {
   background: radial-gradient(
     circle at center,
     #434343 0%,
@@ -53,7 +38,7 @@ body {
   );
 }
 
-@utility masked-img {
+.masked-img {
   mask-image: url("/images/mask-img.png");
   mask-repeat: no-repeat;
   mask-position: center;

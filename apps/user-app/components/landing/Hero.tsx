@@ -1,119 +1,62 @@
+"use client"
+
 import { useGSAP } from "@gsap/react";
-import gsap, { SplitText } from "gsap/all";
-import { useRef } from "react";
-import { useMediaQuery } from "react-responsive";
+import gsap from "gsap";
+import Image from "next/image";
 
-export const Hero = () => {
-  const videoRef = useRef();
-
-  const isMobile = useMediaQuery({ maxWidth: 767 });
-
+const Test = () => {
   useGSAP(() => {
-    const heroSplit = new SplitText(".title", {
-      type: "chars,words",
-    });
-    const paragrpahSplit = new SplitText(".subtitle", {
-      type: "lines",
-    });
-
-    heroSplit.chars.forEach((char) => char.classList.add("text-gradient"));
-
-    gsap.from(heroSplit.chars, {
-      yPercent: 100,
-      duration: 1.8,
-      ease: "expo.out",
-      stagger: 0.06,
+    gsap.from(".iconText", {
+      x: 10,
+      duration: 1,
+      delay: 0.5,
+      ease: "bounce.out",
     });
 
-    gsap.from(paragrpahSplit.lines, {
+    gsap.from(".img-hero", {
+      y: 100,
       opacity: 0,
-      yPercent: 100,
-      ease: "expo.out",
-      stagger: 0.06,
-      delay: 1,
+      ease: "power1.inOut",
+      duration: 1,
+      delay: 0.5,
     });
-
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: "#hero",
-          start: "top top",
-          end: "bottom top",
-          scrub: true,
-        },
-      })
-      .to(".right-leaf", { y: 200 }, 0)
-      .to(".left-leaf", { y: -200 }, 0);
-
-    const startValue = isMobile ? "top 50%" : "center 60%";
-    const endValue = isMobile ? "120% top" : "bottom top";
-
-    let tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: "video",
-        start: startValue,
-        end: endValue,
-        scrub: true,
-        pin: true,
-      },
-    });
-
-    videoRef.current.onloadedmetadata = () => {
-      tl.to(videoRef.current, {
-        currentTime: videoRef.current.duration,
-      });
-    };
   }, []);
 
   return (
-    <>
-      <section id="hero" className="noisy">
-        <h1 className="title">MOJITO</h1>
-
-        <img
-          src="/images/hero-left-leaf.png"
-          alt="left-leaf"
-          className="left-leaf"
+    <div className="relative h-[100vh] bg-[url('/img/gradientHero.png')] bg-cover bg-no-repeat flex-center overflow-hidden text-white ">
+      <div className="flex absolute gap-2 top-[20%]  border-amber-300">
+        <Image
+          src="./img/icons8-x-32.svg"
+          width={24}
+          height={24}
+          alt=""
+          className="invert brightness-0"
         />
-
-        <img
-          src="/images/hero-right-leaf.png"
-          alt="right-leaf"
-          className="right-leaf"
-        />
-
-        <div className="body">
-          {/* <img src="/images/arrow.png" alt="arrow" className="arrow" /> */}
-
-          <div className="content">
-            <div className="space-y-5 hidden md:block">
-              <p>Cool. Crisp. Classic.</p>
-              <p className="subtitle">
-                Sip the Spirit <br /> of Summer
-              </p>
-            </div>
-
-            <div className="view-cocktails">
-              <p className="subtitle">
-                Every cocktail on our menu is a blend of premium ingredients,
-                creative flair, and timeless recipes — designed to delight your
-                senses.
-              </p>
-              <a href="#cocktails">View cocktails</a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div className="video absolute inset-0">
-        <video
-          ref={videoRef}
-          muted
-          playsInline
-          preload="auto"
-          src="/videos/output.mp4"
-        />
+        <h3 className="text-4xl iconText">Pay</h3>
       </div>
-    </>
+      <div className="flex absolute gap-2 top-[30%]  border-amber-300">
+        <h3 className="text-8xl">
+          Pay the
+          <Image
+            src="./img/icons8-x-96.svg"
+            alt=""
+            className="invert brightness-0 inline"
+            width={96}
+            height={96}
+          />
+          way
+        </h3>
+      </div>
+
+      <Image
+        src="/img/heroMobile.png"
+        alt="Mobile"
+        className="img-hero absolute -bottom-[90%]  z-0"
+        width={600}
+        height={600}
+      />
+    </div>
   );
 };
+
+export default Test;
