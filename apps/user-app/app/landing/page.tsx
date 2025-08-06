@@ -1,10 +1,14 @@
-import Test from "../../components/landing/Hero"
+"use client"
+
+import Hero from "../../components/landing/Hero"
+import SubHero from "../../components/landing/SubHero"
 
 
 const page = () => {
   return (
     <div>
-     <Test/>
+     <Hero/>
+     <SubHero/>
     </div>
   )
 }

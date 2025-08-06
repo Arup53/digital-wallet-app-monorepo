@@ -4,7 +4,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Image from "next/image";
 
-const Test = () => {
+const Hero = () => {
   useGSAP(() => {
     gsap.from(".iconText", {
       x: 10,
@@ -56,7 +56,7 @@ const Test = () => {
         height={600}
       />
     </div>
-  );
-};
+  )
+}
 
-export default Test;
+export default Hero;

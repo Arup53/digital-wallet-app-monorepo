@@ -52,7 +52,7 @@ const SubHero = () => {
   }, []);
 
   return (
-    <section className="rounded-b-[3.75rem] border border-amber-400">
+    <section className="rounded-b-[3.75rem] border border-black bg-black text-white">
       <div className="my-24 py-32 w-[50%] mx-auto h-full   ">
         <div className="flex flex-col gap-12">
           <svg
