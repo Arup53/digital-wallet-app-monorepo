@@ -5,6 +5,7 @@ import { Select } from "@repo/ui/select";
 import { useState } from "react";
 import { TextInput } from "@repo/ui/textinput";
 import { createOnRampTransaction } from "../../app/lib/actions/createOnrampTransaction";
+import toast from "react-hot-toast";
 
 const SUPPORTED_BANKS = [
   {
@@ -52,6 +53,7 @@ export const AddMoney = () => {
           <Button
             onClick={async () => {
               await createOnRampTransaction(provider, value);
+              toast.success('Successfully toasted!')
               window.location.href = redirectUrl || "";
             }}
           >

@@ -4,6 +4,7 @@ import "./globals.css";
 import Providers from "./providers";
 import { AppbarClient } from "../AppbarClient";
 import Navbar2 from "../components/landing/Navbar2";
+import  { Toaster } from 'react-hot-toast';
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -31,6 +32,7 @@ export default function RootLayout({
           {/* <AppbarClient /> */}
           <Navbar2/>
           {children}
+          <Toaster />
         </Providers>
       </body>
     </html>

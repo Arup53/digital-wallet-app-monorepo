@@ -10,7 +10,7 @@ import { useRouter } from "next/navigation";
 
 const Navbar2 = () => {
 
-    const session = useSession();
+  const session = useSession();
   const router = useRouter();
 
   const onSignout = async ()=> {
