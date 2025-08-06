@@ -3,6 +3,7 @@
 import Art from "../../components/landing/Art"
 import Hero from "../../components/landing/Hero"
 import SubHero from "../../components/landing/SubHero"
+import TickerSection from "../../components/landing/TickerSection"
 
 
 const page = () => {
@@ -11,6 +12,7 @@ const page = () => {
      <Hero/>
      <SubHero/>
      <Art />
+     <TickerSection/>
     </div>
   )
 }

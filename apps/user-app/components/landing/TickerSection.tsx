@@ -9,7 +9,7 @@ import { GiSpeedometer } from "react-icons/gi";
 import { IoTvOutline, IoWaterOutline } from "react-icons/io5";
 import { LuRouter, LuSatelliteDish } from "react-icons/lu";
 import { BsCreditCard } from "react-icons/bs";
-import { col } from "motion/react-client";
+
 import { TbDatabaseDollar, TbHomeDollar } from "react-icons/tb";
 import { BiBox } from "react-icons/bi";
 import { GoShieldCheck } from "react-icons/go";
