@@ -1,3 +1,5 @@
+"use client"
+
 const adArray = [
   { title: "Flight", img: "./img/download.svg" },
   { title: "Bus", img: "./img/bus.svg" },
@@ -18,12 +20,12 @@ const AdSection = () => {
         {adArray.map((el) => (
           <div
             key={el.title}
-            className=" border-2  border-purple-400 w-[16.5rem] h-[17.5rem] rounded-4xl flex gap-2 justify-between "
+            className=" border-2  border-purple-400 w-[16.5rem] h-[17.5rem] rounded-3xl flex gap-2 justify-between "
           >
-            <p className="text-2xl translate-8   ">{el.title}</p>
+            <p className="text-2xl translate-x-8 translate-y-8   ">{el.title}</p>
             <img
               src={el.img}
-              className="self-end object-contain rounded-br-4xl "
+              className="self-end object-contain rounded-br-3xl "
             />
           </div>
         ))}
