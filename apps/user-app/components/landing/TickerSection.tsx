@@ -27,6 +27,11 @@ const TickerSection = () => {
   return (
     <div>
       {/* // container-1 */}
+         
+         <h3 className="text-4xl font-bold text-black text-center mb-24  ">Convenience at your 
+          <br />fingertips</h3>
+     
+         
 
       <Marquee>
         <Curvebox text={"Mobile Recharge"} circleColor={colorObj.grey}>

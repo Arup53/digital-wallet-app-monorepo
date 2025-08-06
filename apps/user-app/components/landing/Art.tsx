@@ -22,31 +22,25 @@ const Art = () => {
     const test1Timeline = gsap.timeline({
       scrollTrigger: {
         trigger: ".container1",
+        start:"top 90%",
         end: "center  40%",
         scrub: true,
         markers: true,
       },
     });
 
+   
+
     test1Timeline
-      .to(".para", {
-        y: -300,
-        duration: 1,
-        ease: "power1.inOut",
-      })
       .to(".container1", {
-        opacity: 0,
-        display: "none",
-        ease: "sine.inOut",
+        opacity: 1, duration: 1
+      }).to('.container1',{
+         opacity: 0, duration: 1, display:"none"
+      }).to(".container2",{
+         opacity: 1, duration: 1
       })
-      .to(".para2", {
-        y: -300,
-        duration: 1,
-        ease: "power1.inOut",
-      })
-      .to(".container2", {
-        ease: "sine.inOut",
-      });
+      
+      
 
     // maskTimeline
     //   .to(".will-fade", { opacity: 0, stagger: 0.2, ease: "power1.inOut" })
@@ -123,34 +117,35 @@ const Art = () => {
           </div>
         </div> */}
 
-        <div className="container1 flex justify-center items-center gap-12">
+        <div className=" flex justify-center items-center gap-12">
           <img
-            className="h1 -translate-y-40 h-[600px] object-contain"
+            
+            className="container1 h1 -translate-y-40 h-[600px] object-contain"
             src="/img/a1.png"
             alt=""
           />
-          <p className="para text-4xl max-w-2xl">
+          {/* <p className="para text-4xl max-w-2xl">
             Set up in seconds. Right on your iPhone. Apple Pay is built into
             iPhone, Apple Watch, Mac, iPad, and Apple Vision Pro. To get started
             on iPhone, open the Wallet app and tap the plus symbol. Then add a
             credit or debit card by tapping the back of your iPhone with your
             eligible card.
-          </p>
-        </div>
-        <div className="container2 flex justify-center items-center gap-12">
-          <img
-            className="img2 -translate-y-40 h-[600px] object-contain"
+          </p> */}
+            <img
+            className="container2 img2 -translate-y-40 h-[600px] object-contain"
             src="/img/android2.png"
             alt=""
           />
-          <p className="para2 text-4xl max-w-2xl">
-            {" "}
+          {/* <p className="para2 text-4xl max-w-2xl">
             Pay the way that works for you. Apple Pay gives you flexibility at
             checkout. When you shop online and in apps with iPhone and iPad, you
             can pay in full or split your purchases into smaller payments over
             time through an eligible card or other pay later provider.
-          </p>
+          </p> */}
         </div>
+        
+        
+        
 
         {/* <div className="container2 flex-center">
           <h1 className="text-purple-500">Container-2</h1>
