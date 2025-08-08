@@ -4,7 +4,7 @@ import { Button } from "@repo/ui/button";
 import { signIn, signOut, useSession } from "next-auth/react";
 import Link from "next/link";
 
-import { useRouter } from "next/navigation";
+import { redirect, useRouter } from "next/navigation";
 
 
 
@@ -15,7 +15,11 @@ const Navbar2 = () => {
 
   const onSignout = async ()=> {
   await signOut();
-          router.push("/api/auth/signin");}
+          router.push("/landing");}
+
+  const handleSignIn =async()=>{
+    redirect("/api/auth/signin");
+  }        
 
   return (
     <section className=" top-0 z-50 bg-white fixed text-black shadow-sm w-full">
@@ -24,7 +28,7 @@ const Navbar2 = () => {
 
         <div className="flex text-sm items-center gap-6">
           
-          <Button onClick={session.data?.user ? onSignout : signIn}>
+          <Button onClick={session.data?.user ? onSignout : handleSignIn}>
           {session.data?.user ? "Logout" : "Login"}
         </Button>
           
