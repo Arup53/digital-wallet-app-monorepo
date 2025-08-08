@@ -27,11 +27,11 @@ const Navbar2 = () => {
     <section className=" top-0 z-50 bg-white fixed text-black shadow-sm w-full">
       <div className="w-[50%] mx-auto flex justify-between items-center py-3 ">
         <p className="text-xl font-medium">xPay</p>
-        <div className="flex text-sm items-center gap-6">
+        <div className="flex justify-center text-sm items-center gap-6">
           <Link href={'/dashboard'}>Dashboard</Link>
-          <Button onClick={session.data?.user ? onSignout : handleSignIn}>
+          <button onClick={session.data?.user ? onSignout : handleSignIn}>
           {session.data?.user ? "Logout" : "Login"}
-        </Button>  
+        </button>  
         </div>
       </div>
     </section>
