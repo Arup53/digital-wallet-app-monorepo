@@ -28,11 +28,12 @@ const Navbar2 = () => {
 
         <div className="flex text-sm items-center gap-6">
           
+          <Link href={'/dashboard'}>Dashboard</Link>
+
           <Button onClick={session.data?.user ? onSignout : handleSignIn}>
           {session.data?.user ? "Logout" : "Login"}
         </Button>
           
-          <Link href={'/dashboard'}>Dashboard</Link>
         </div>
       </div>
     </section>
