@@ -25,7 +25,6 @@ const Art = () => {
         start:"top 90%",
         end: "center  40%",
         scrub: true,
-        markers: true,
       },
     });
 
