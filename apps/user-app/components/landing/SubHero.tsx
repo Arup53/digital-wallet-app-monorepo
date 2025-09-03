@@ -20,7 +20,7 @@ const SubHero = () => {
         start: "top 90%",
         end: "top 65%",
         scrub: true,
-        markers: true,
+       
       },
     });
     const test1Timeline3 = gsap.timeline({
