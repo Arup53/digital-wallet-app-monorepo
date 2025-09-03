@@ -24,7 +24,7 @@ const InvestSection = () => {
         end: "bottom bottom",
         scrub: 1.5,
         pin: true,
-        markers:true
+        
       },
     });
 
