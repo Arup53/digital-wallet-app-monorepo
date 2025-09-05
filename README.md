@@ -146,7 +146,7 @@ Auth Required: No (but should validate secret )
 
 **Description**
 
-This endpoint is called by HDFC Bank (or a mock banking provider) to notify the wallet system that a user has successfully topped up their wallet.
+This endpoint is called by HDFC Bank (or a mock banking provider) to notify the wallet system that a user has successfully topped up their wallet .
 
 It updates the user’s wallet balance and marks the corresponding on-ramp transaction as Success.
 
