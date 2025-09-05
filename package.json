@@ -8,6 +8,7 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "check-types": "turbo run check-types",
     "start-webhook": "cd ./apps/bank-webhook && npm run build && npm run start",
+    "start-user-app":"cd ./apps/user-app && npm run build && npm run start",
     "db:generate": "cd packages/db && npx prisma generate && cd ../.."
   },
   "devDependencies": {
