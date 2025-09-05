@@ -72,7 +72,7 @@ The transaction starts in a Processing state until confirmation is received from
 ```
 await createOnRampTransaction("hdfc", 500);
 
-Responses
+Responses:
 
 {
   "message": "Done"
@@ -111,25 +111,25 @@ The operation is wrapped in a transaction to ensure atomicity and prevent race c
 ```
 await p2pTransfer("9876543210", 200);
 
-Responses
+Responses:
 
 {
   "message": "Transfer successful"
 }
 
-Error (401 / Unauthenticated)
+Error (401 / Unauthenticated):
 
 {
   "message": "Error while sending"
 }
 
-Error (404 / User Not Found)
+Error (404 / User Not Found):
 
 {
   "message": "User not found"
 }
 
-Error (400 / Insufficient Funds)
+Error (400 / Insufficient Funds):
 
 {
   "error": "Insufficient funds"
