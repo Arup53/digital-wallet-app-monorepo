@@ -15,6 +15,8 @@ A mini-scale digital wallet, similar to Apple Pay or PayPal, that simulates peer
 
 ### General Architecture
 
+![On-Ramp](./apps/docs/images/general.png)
+
 The figure-1 above represents main system architecture which is separated to two parts – apps or frontends, backend system- consists of a server ,webhook and a PostgreSQL db cloud instance.
 
 ### On-Ramp Architecture
