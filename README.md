@@ -29,7 +29,6 @@ For, peer to peer transfer between to two users both need to be register with th
 
 
 
-
 ## Installation 
 
 To install, run the following command:
@@ -46,9 +45,6 @@ or, if you want run the project as docker container , run the following ---
 ```
 TBD
 ```
-## Project Structure
-
-TBD
 
 ## API Reference
 
