@@ -48,7 +48,94 @@ TBD
 
 ## API Reference
 
-TBD
+### Create On-Ramp Transaction
+
+Type: Next.js Server Action
+Function: createOnRampTransaction(provider: string, amount: number)
+Auth Required: Yes (NextAuth session)
+
+**Description**
+
+Creates a new on-ramp transaction (wallet top-up) from a banking provider .
+The transaction starts in a Processing state until confirmation is received from the provider.
+
+**Request**
+
+| Name       | Type     | Required | Description                                                            |
+| ---------- | -------- | -------- | ---------------------------------------------------------------------- |
+| `provider` | `string` | Yes    | Banking provider identifier (e.g., `"citi"`, `"axis"`)                 |
+| `amount`   | `number` | Yes    | Amount in **rupees** (stored as paise in DB by multiplying with `100`) |
+
+
+**Example:**
+
+```
+await createOnRampTransaction("hdfc", 500);
+
+Responses
+
+{
+  "message": "Done"
+}
+
+Error (401 / Unauthenticated):
+{
+  "message": "Unauthenticated request"
+}
+
+```
+
+### Peer-to-Peer Transfer
+
+Endpoint Type: Next.js Server Action
+Function: p2pTransfer(to: string, amount: number)
+Auth Required: Yes (NextAuth session)
+
+
+**Description**
+
+This server action enables peer-to-peer money transfers between two users.
+It checks the sender’s balance, ensures sufficient funds, and transfers the specified amount to the recipient.
+
+The operation is wrapped in a transaction to ensure atomicity and prevent race conditions (using FOR UPDATE locks).
+
+**Request**
+
+| Name     | Type     | Required | Description                                                                      |
+| -------- | -------- | -------- | -------------------------------------------------------------------------------- |
+| `to`     | `string` |  Yes    | Receiver’s phone number (must exist in the database)                             |
+| `amount` | `number` |  Yes    | Amount to transfer (in smallest unit, e.g., paise if balance is stored that way) |
+
+**Example:**
+
+```
+await p2pTransfer("9876543210", 200);
+
+Responses
+
+{
+  "message": "Transfer successful"
+}
+
+Error (401 / Unauthenticated)
+
+{
+  "message": "Error while sending"
+}
+
+Error (404 / User Not Found)
+
+{
+  "message": "User not found"
+}
+
+Error (400 / Insufficient Funds)
+
+{
+  "error": "Insufficient funds"
+}
+
+```
 
 ## Techstack
 
