@@ -21,7 +21,7 @@ The figure-1 above represents main system architecture which is separated to two
 ### On-Ramp Architecture
 ![On-Ramp](./apps/docs/images/onramp.png)
 
-For, figure-2 represents on ramp or simply bank to wallet transfer transaction. Users apps fund transfer request is goes to backend server that talks to both db and desired bank. After, sending the request of frontend the server primarily update the transaction as processing ; when the bank finally sends response ,either success or failure,  it goes to webhook server that will push it to the main server, and update the specific db transaction status.
+For, figure-2 represents on ramp or simply bank to wallet transfer transaction. Users apps fund transfer request is goes to backend server that talks to both db and desired bank. After, sending the request of frontend the server primarily update the transaction as processing ; when the bank finally sends response ,either success or failure,  it goes to webhook server that will push it to the main server, and update the specific db transaction status. For, simulating a bank server is built and test is ran through postman.
 
 ### p2p transfer
 
