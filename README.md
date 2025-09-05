@@ -137,6 +137,63 @@ Error (400 / Insufficient Funds):
 
 ```
 
+### Webhook
+
+Endpoint Type: Express REST API
+Endpoint Type: Express REST API
+Route: POST /hdfcWebhook
+Auth Required: No (but should validate secret )
+
+**Description**
+
+This endpoint is called by HDFC Bank (or a mock banking provider) to notify the wallet system that a user has successfully topped up their wallet.
+
+It updates the user’s wallet balance and marks the corresponding on-ramp transaction as Success.
+
+
+**Request**
+
+Method & Path
+
+```
+POST /hdfcWebhook
+Content-Type: application/json
+```
+Request Body
+
+```
+{
+  "token": "abc123",
+  "user_identifier": 42,
+  "amount": "5000"
+}
+
+```
+
+| Field             | Type     | Required | Description                                                  |
+| ----------------- | -------- | -------- | ------------------------------------------------------------ |
+| `token`           | `string` |  Yes    | Transaction token generated during `createOnRampTransaction` |
+| `user_identifier` | `number` | Yes    | ID of the user whose wallet should be credited               |
+| `amount`          | `string` | Yes    | Amount of money credited (stringified number)                |
+
+Responses:
+
+```
+Success (200):
+{
+  "message": "Captured"
+}
+
+Error (411 – Processing Error):
+
+{
+  "message": "Error while processing webhook"
+}
+
+
+```
+
+
 ## Techstack
 
 - `Next.js`: For, frontend ui and simulating p2p, bank transfer operation to db.
