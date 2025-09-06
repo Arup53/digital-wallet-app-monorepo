@@ -32,7 +32,7 @@ For, peer to peer transfer between to two users both need to be register with th
 
 **CI**
 
-The continuous integration pipeline just checks whether the project is build after each new commit.
+The continuous integration pipeline just checks whether the project is build after each new pull request. 
 
 **CD**
 
