@@ -28,6 +28,19 @@ For, figure-2 represents on ramp or simply bank to wallet transfer transaction. 
 For, peer to peer transfer between to two users both need to be register with the xPay systems.
 
 
+### CI CD 
+
+**CI**
+
+The continuous integration pipeline just checks whether the project is build after each new commit.
+
+**CD**
+
+![CD PIPLINE](./apps/docs/images/CD.png)
+
+The continuous deployment is a multi-stage pipline: First, when a new commit occurs on user-app it starts a github ubuntu instance , then create a docker image of the app ; after that push to dockerhub. Lastly, a ec2 instance is used to fetch the image and run using docker.
+
+
 
 ## Installation 
 
