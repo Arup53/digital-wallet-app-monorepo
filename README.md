@@ -41,10 +41,9 @@ The continuous integration pipeline just checks whether the project is build aft
 The continuous deployment is a multi-stage pipline: First, when a new commit occurs on user-app it starts a github ubuntu instance , then create a docker image of the app ; after that push to dockerhub. Lastly, a ec2 instance is used to fetch the image and run using docker.
 
 
-
 ## Installation 
 
-To install, run the following command:
+After cloning the repo run the following command to run the app:
 
 ```
 cd digital-wallet-app-monorepo
